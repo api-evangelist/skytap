@@ -1,0 +1,84 @@
+generated: '2026-07-21'
+method: searched
+source: https://help.skytap.com/API_v2_Documentation.html
+description: >-
+  Entity-relationship graph derived from the documented Skytap Cloud REST API v2
+  resource surface. Primary hierarchy: an Environment (configuration) contains
+  VMs and networks; VMs contain network interfaces; interfaces expose published
+  services and secondary IPs. Templates mirror the environment shape as reusable
+  images. Projects, users, groups and departments provide access organization.
+entities:
+  - name: Environment
+    aka: configuration
+    path: /v2/configurations
+    relationships:
+      - has_many: VM
+        via: vms
+      - has_many: Network
+        via: networks
+      - belongs_to: Project
+        via: projects
+  - name: Template
+    path: /v2/templates
+    relationships:
+      - has_many: VM
+        via: vms
+      - has_many: Network
+        via: networks
+  - name: VM
+    path: /v2/configurations/{id}/vms/{vm-id}
+    relationships:
+      - belongs_to: Environment
+        via: configuration
+      - has_many: Interface
+        via: interfaces
+      - has_many: Credential
+        via: credentials
+      - has_many: Container
+        via: containers
+  - name: Interface
+    aka: network adapter
+    path: /v2/vms/{id}/interfaces/{interface-id}
+    relationships:
+      - belongs_to: VM
+        via: vm
+      - has_many: PublishedService
+        via: services
+      - has_many: SecondaryIp
+        via: secondary_ips
+  - name: PublishedService
+    path: /v2/interfaces/{id}/services
+    relationships:
+      - belongs_to: Interface
+        via: interface
+  - name: Network
+    path: /v2/configurations/{id}/networks
+    relationships:
+      - belongs_to: Environment
+        via: configuration
+  - name: Project
+    path: /v2/projects
+    relationships:
+      - has_many: Environment
+        via: configurations
+      - has_many: User
+        via: users
+  - name: User
+    path: /v2/users
+    relationships:
+      - belongs_to: Department
+        via: department
+      - has_many: Group
+        via: groups
+  - name: Department
+    path: /v2/departments
+  - name: Group
+    path: /v2/groups
+  - name: Asset
+    path: /v2/assets
+  - name: PublicIp
+    path: /v2/public_ips
+  - name: Schedule
+    path: /v2/schedules
+  - name: Webhook
+    path: /v2/webhooks

@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/skytap/webhook-client-demos
+spec_type: Webhooks
+description: >-
+  Skytap exposes an event surface via account webhooks and notification rules.
+  Webhooks deliver event-driven HTTP callbacks to a subscriber endpoint; the
+  official webhook-client-demos repository provides Python samples for receiving
+  and processing the event stream. No published AsyncAPI document was found.
+delivery:
+  transport: HTTP POST callback to subscriber URL
+  management: /v2/webhooks (create/list/delete webhook subscriptions)
+  related: Notification Rules (account-wide and user-defined alerts)
+event_categories:
+  - environment (configuration) lifecycle and runstate changes
+  - VM runstate changes (running/stopped/suspended/halted)
+  - resource / schedule / usage notifications
+samples: https://github.com/skytap/webhook-client-demos
+asyncapi_spec: none

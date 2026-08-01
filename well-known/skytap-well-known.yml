@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of Skytap hosts
+hosts:
+  - host: https://cloud.skytap.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://www.skytap.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 301
+  - host: https://help.skytap.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+notes: No well-known discovery documents served (200) on the API host cloud.skytap.com or the docs/marketing hosts. Absence is valid, recorded data. No catalog/OIDC surface published.

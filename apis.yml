@@ -1,7 +1,29 @@
 aid: skytap
 name: Skytap
-description: Skytap is a company surfaced as a portfolio company of insight-partners and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Skytap (now delivered as Kyndryl Cloud Uplift) is a cloud service for running
+  IBM Power (AIX, IBM i) and x86 workloads natively in Microsoft Azure, enabling
+  enterprises to lift-and-shift traditional data-center applications into
+  self-service, on-demand virtual environments without re-architecting them. The
+  Skytap Cloud REST API (v1 and v2, hosted at cloud.skytap.com, HTTP Basic auth
+  with an API token) programmatically manages environments (configurations),
+  virtual machines, networks, templates, users, projects, assets, public IPs,
+  schedules, usage reports and webhooks. It is the engine behind Skytap's
+  official Terraform provider, Go SDK, PowerShell module, and Ansible and Vagrant
+  integrations. Skytap is a portfolio company of Insight Partners.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.skytap.com/wp-content/uploads/2021/03/skytap-logo.png
 url: https://raw.githubusercontent.com/api-evangelist/skytap/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,15 +33,101 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Cloud
+- IBM Power
+- Infrastructure as a Service
+- Application Modernization
+- Azure
+- Virtual Machines
+- DevOps
+- REST API
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Skytap Cloud REST API
+  description: >-
+    REST API for managing Skytap environments (configurations), VMs, networks,
+    templates, users, projects, assets and webhooks. v2 adds filtering, sorting
+    and pagination; v1 remains for operations not yet in v2. HTTP Basic auth
+    (username + API security token).
+  humanURL: https://help.skytap.com/API_v2_Documentation.html
+  baseURL: https://cloud.skytap.com
+  tags:
+  - Cloud
+  - Infrastructure
+  - Virtual Machines
+  properties:
+  - type: Authentication
+    url: authentication/skytap-authentication.yml
+  - type: ErrorCatalog
+    url: errors/skytap-error-codes.yml
+  - type: Conventions
+    url: conventions/skytap-conventions.yml
+  - type: DataModel
+    url: data-model/skytap-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/skytap-lifecycle.yml
+  - type: Webhooks
+    url: asyncapi/skytap-webhooks.yml
+  - type: MCPServer
+    url: mcp/skytap-mcp.yml
 common:
 - type: Website
   url: http://www.skytap.com/
+- type: DeveloperPortal
+  url: https://help.skytap.com/
+- type: Documentation
+  url: https://help.skytap.com/api.html
+- type: APIReference
+  url: https://help.skytap.com/API_v2_Documentation.html
+- type: GettingStarted
+  url: https://help.skytap.com/api-quick-start.html
+- type: GitHubOrganization
+  url: https://github.com/skytap
+- type: StatusPage
+  url: https://status.skytap.com
+- type: Blog
+  url: https://www.skytap.com/blog/
+- type: SignUp
+  url: https://cloud.skytap.com/
+- type: Support
+  url: https://help.skytap.com/
+- type: Packages
+  url: packages/skytap-packages.yml
+- type: SDKs
+  url: packages/skytap-packages.yml
+- type: Authentication
+  url: authentication/skytap-authentication.yml
+- type: Conventions
+  url: conventions/skytap-conventions.yml
+- type: ErrorCatalog
+  url: errors/skytap-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/skytap-lifecycle.yml
+- type: DataModel
+  url: data-model/skytap-data-model.yml
+- type: Conformance
+  url: conformance/skytap-conformance.yml
+- type: Compliance
+  url: https://www.skytap.com/blog/skytap-offers-pci-and-iso-27001-compliance-for-ibm-power-workloads-in-azure/
+- type: DomainSecurity
+  url: security/skytap-domain-security.yml
+- type: Webhooks
+  url: asyncapi/skytap-webhooks.yml
+- type: WellKnown
+  url: well-known/skytap-well-known.yml
+- type: MCPServer
+  url: mcp/skytap-mcp.yml
+- type: LLMsTxt
+  url: llms/skytap-llms.txt
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v1

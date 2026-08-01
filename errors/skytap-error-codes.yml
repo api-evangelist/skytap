@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: searched
+source: https://help.skytap.com/api-http-status-codes.html
+format: http-status + json-error-envelope
+envelope:
+  shape: '{"error": "<human-readable message>"}'
+  note: >-
+    Errors return a standard HTTP status code; the response body may carry a JSON
+    object with an "error" string (e.g. {"error": "You do not have sufficient
+    privileges to perform this action"}). Not RFC 9457 problem+json.
+problems:
+  - status: 200
+    title: Success
+  - status: 302
+    title: URL redirection
+  - status: 401
+    title: Unauthorized
+    remediation: Authentication is required and has failed or was not provided; supply valid Basic auth (username + API token).
+  - status: 404
+    title: Not found
+    remediation: Resource cannot be found (or is hidden due to insufficient privileges); may become available in the future.
+  - status: 406
+    title: Not Acceptable
+    remediation: Request succeeded but no response could be generated matching the Accept header content type.
+  - status: 409
+    title: Conflict
+    remediation: Request is well-formed but conflicts with another resource or permission.
+  - status: 422
+    title: Invalid parameter
+    remediation: Request well-formed but has semantic errors; also returned when a runstate change is attempted on a busy resource.
+  - status: 423
+    title: Locked / Resource busy
+    remediation: The resource is busy; wait and retry the request shortly (poll for busyness before mutating).
+  - status: 429
+    title: Too Many Requests
+    remediation: Too many HTTP requests in a given period; back off and retry.
+  - status: 500
+    title: System error
+    remediation: Generic server error given when no specific error message is available.

@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://help.skytap.com/api.html
+versioning:
+  scheme: uri-path
+  versions: [v1, v2]
+  current: v2
+  docs: https://help.skytap.com/api.html
+  note: >-
+    v1 (legacy, full surface) and v2 (adds filtering, sorting, pagination) run in
+    parallel; v2 is not a full replacement for v1, so some operations exist only in
+    v1. Both hosted at https://cloud.skytap.com.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No published RFC 8594 Sunset/Deprecation-header policy found.
+sla:
+  url: null
+status_page: https://status.skytap.com
+release_notes:
+  url: https://help.skytap.com/
+  note: Release notes published within the Kyndryl Cloud Uplift (help.skytap.com) documentation portal.
+deprecated_operations: []

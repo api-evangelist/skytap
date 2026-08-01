@@ -1,0 +1,29 @@
+# Skytap (Kyndryl Cloud Uplift)
+
+> Skytap is a cloud service for running IBM Power (AIX, IBM i) and x86 workloads natively in Microsoft Azure, letting enterprises lift-and-shift traditional applications into self-service, on-demand virtual environments. The Skytap Cloud REST API (v1 and v2, hosted at cloud.skytap.com) programmatically manages environments, VMs, networks, templates, users and projects, and is the engine behind the official Terraform, Ansible, Vagrant and PowerShell tooling.
+
+## APIs
+- [Skytap Cloud REST API v2](https://help.skytap.com/API_v2_Documentation.html): Environments, VMs, interfaces, networks, templates, users, projects, assets, public IPs, schedules, usage, webhooks. Base URL https://cloud.skytap.com. HTTP Basic auth (username + API token).
+- [Skytap Cloud REST API v1](https://help.skytap.com/API_Documentation.html): Legacy full-surface API; some operations exist only in v1.
+
+## Docs
+- [API quick start](https://help.skytap.com/api-quick-start.html)
+- [HTTP status codes](https://help.skytap.com/api-http-status-codes.html)
+- [Checking for busyness (best practice)](https://help.skytap.com/api-busy-bp.html)
+- [Example scripts and clients](https://help.skytap.com/api-example-scripts-and-clients.html)
+- [Developer tools](https://help.skytap.com/developer-tools.html)
+- [Help & documentation portal](https://help.skytap.com/)
+
+## SDKs & tooling
+- [skytap-sdk-go (official Go SDK)](https://github.com/skytap/skytap-sdk-go)
+- [Terraform provider](https://github.com/skytap/terraform-provider-skytap)
+- [PowerShell module](https://github.com/skytap/Powershell_Module_for_Skytap)
+- [Ansible](https://github.com/skytap/ansible-skytap)
+- [Vagrant provider](https://github.com/skytap/vagrant-skytap)
+- [Webhook client demos](https://github.com/skytap/webhook-client-demos)
+- [Community Python module](https://pypi.org/project/skytap/)
+
+## Operations
+- Status: https://status.skytap.com
+- GitHub org: https://github.com/skytap
+- Compliance: SOC 2 Type 2, ISO 27001, PCI DSS

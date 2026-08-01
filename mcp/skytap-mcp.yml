@@ -1,0 +1,44 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: https://help.skytap.com/API_v2_Documentation.html
+server:
+  name: skytap
+  transport: http
+  url: null
+  note: No official hosted/remote Skytap MCP server found. Tool list below is a
+    candidate derived from documented v2 REST resources for a future MCP wrapper.
+auth:
+  type: http-basic
+  credential: username + API security token
+tools:
+  - name: list_environments
+    description: List environments (configurations).
+    source_operation: 'GET /v2/configurations'
+  - name: get_environment
+    description: Retrieve a single environment.
+    source_operation: 'GET /v2/configurations/{id}'
+  - name: update_environment
+    description: Update an environment (including runstate).
+    source_operation: 'PUT /v2/configurations/{id}'
+  - name: set_vm_runstate
+    description: Change a VM runstate (running/stopped/suspended/halted/reset).
+    source_operation: 'PUT /v2/configurations/{id}/vms/{vm-id}'
+  - name: list_templates
+    description: List reusable environment templates.
+    source_operation: 'GET /v2/templates'
+  - name: list_vms
+    description: List VMs in an environment.
+    source_operation: 'GET /v2/configurations/{id}/vms'
+  - name: list_users
+    description: List account users.
+    source_operation: 'GET /v2/users'
+  - name: list_projects
+    description: List projects.
+    source_operation: 'GET /v2/projects'
+  - name: get_usage
+    description: Retrieve usage reports.
+    source_operation: 'GET /v2/usage'
+  - name: list_public_ips
+    description: List public IP addresses.
+    source_operation: 'GET /v2/public_ips'

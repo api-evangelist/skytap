@@ -1,0 +1,46 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/skytap
+packages:
+  - language: go
+    registry: pkg.go.dev
+    name: github.com/skytap/skytap-sdk-go
+    url: https://github.com/skytap/skytap-sdk-go
+    install: go get github.com/skytap/skytap-sdk-go
+    license: Apache-2.0
+    official: true
+    notes: Official Skytap Go SDK / REST client used by the Terraform provider.
+  - language: go
+    registry: github
+    name: terraform-provider-skytap
+    url: https://github.com/skytap/terraform-provider-skytap
+    install: terraform init  # provider skytap/skytap from the Terraform Registry
+    license: MPL-2.0
+    official: true
+    notes: 'Official Terraform provider (moved from hashicorp/terraform-provider-skytap). Registry: registry.terraform.io/providers/skytap/skytap'
+  - language: powershell
+    registry: github
+    name: Powershell_Module_for_Skytap
+    url: https://github.com/skytap/Powershell_Module_for_Skytap
+    official: true
+    notes: Official PowerShell module for the Skytap API.
+  - language: ruby
+    registry: github
+    name: vagrant-skytap
+    url: https://github.com/skytap/vagrant-skytap
+    official: true
+    notes: Official Vagrant provider plugin for managing Skytap environments.
+  - language: python
+    registry: github
+    name: ansible-skytap
+    url: https://github.com/skytap/ansible-skytap
+    official: true
+    notes: Official Ansible playbooks/modules and dynamic inventory for Skytap.
+  - language: python
+    registry: pypi
+    name: skytap
+    url: https://pypi.org/project/skytap/
+    install: pip install skytap
+    license: MIT
+    official: false
+    notes: Community Python wrapper (FulcrumIT / github.com/FulcrumIT/skytap); docs at skytap.readthedocs.io. Not published by Skytap.

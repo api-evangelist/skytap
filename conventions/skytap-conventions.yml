@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: searched
+source: https://help.skytap.com/api-quick-start.html
+authentication:
+  style: HTTP Basic (username + API security token)
+  ref: authentication/skytap-authentication.yml
+content_negotiation:
+  formats: [application/json, application/xml]
+  preferred: application/json
+  request_headers:
+    - 'Accept: application/json'
+    - 'Content-Type: application/json'
+versioning:
+  style: uri-path (/v2/... and legacy /v1/...)
+  ref: lifecycle/skytap-lifecycle.yml
+pagination:
+  style: header-based (v2)
+  request_params: [count, offset, filter, sort]
+  response_headers: [Content-Range, Link]
+  note: >-
+    v2 collection endpoints support filtering, sorting and pagination; paginated
+    responses carry a Content-Range header and a Link header for navigation.
+idempotency:
+  supported: false
+  note: No documented idempotency-key header or contract.
+busyness:
+  signal: HTTP 423 (busy) / 422 (runstate change on busy resource)
+  pattern: >-
+    Resources become "busy" during long-running operations; clients should poll
+    the resource busy flag before issuing mutating requests (documented best
+    practice "checking for busyness"). See api-busy-bp.html.
+rate_limiting:
+  signal: HTTP 429 (Too Many Requests)
+  headers: null
+  note: No documented quota headers; back off on 429.
+error_envelope:
+  shape: '{"error": "<message>"}'
+  format: http-status + json (not RFC 9457)
+  ref: errors/skytap-error-codes.yml

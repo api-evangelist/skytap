@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://help.skytap.com/api-quick-start.html
+docs: https://help.skytap.com/api-quick-start.html
+summary:
+  types: [http]
+  http_schemes: [basic]
+  api_key_in: []
+  oauth2_flows: []
+schemes:
+  - name: BasicAuth
+    type: http
+    scheme: basic
+    description: >-
+      HTTP Basic authentication. Credentials are the account username plus an API
+      security token (recommended) or the account password, base64-encoded as
+      "<username>:<api-token>" in the Authorization header. The API security token
+      is generated/rotated from the user account settings in the Skytap web UI.
+    credential: username + API security token (or password)
+    header: 'Authorization: Basic <base64(username:api-token)>'
+    sources: [docs]
+notes: >-
+  No OAuth2/OIDC or scope surface — authorization is account/role driven, not
+  scope-based, so scopes/ is intentionally omitted. Insufficient privileges most
+  often return 404 (rather than 403) to avoid disclosing resource existence.
